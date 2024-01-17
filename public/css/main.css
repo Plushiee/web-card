@@ -1,0 +1,19 @@
+.card-container {
+    min-height: 100vh;
+}
+
+.card-img-top {
+    width: 100px;
+    height: 100px;
+}
+
+.transparent-item {
+    width: 16px;
+    height: 24px;
+    background-color: transparent;
+}
+
+/* efek */
+#nsfwButton, #gtaButton {
+    transition: all 0.9s ease-in-out;
+}
