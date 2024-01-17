@@ -24,7 +24,7 @@ $(document).ready(function () {
         });
     }
 
-    function applyHoverEffect(buttonId, buttonTextId, ikonKiriId, ikonKananId, oldButtonText, newButtonText, newIkonKiriClass, newIkonKananClass) {
+    function applyHoverEffect(buttonId, buttonTextId, ikonKiriId, ikonKananId, oldButtonText, newButtonText, oldIkonKiriClass, oldIkonKananClass, newIkonKiriClass, newIkonKananClass) {
         $(buttonId).hover(
             function () {
                 $(buttonTextId).animate({ opacity: 0 }, 200, function () {
@@ -37,23 +37,41 @@ $(document).ready(function () {
                 $(buttonTextId).animate({ opacity: 0 }, 200, function () {
                     $(this).text(oldButtonText).animate({ opacity: 1 }, 200);
                 });
-                $(ikonKiriId).removeClass().addClass(kelasIkonKiri);
-                $(ikonKananId).removeClass().addClass(kelasIkonKanan);
+                $(ikonKiriId).removeClass().addClass(oldIkonKiriClass);
+                $(ikonKananId).removeClass().addClass(oldIkonKananClass);
             }
         );
     }
     // END Daftar Function
 
+    // START Daftar Variable
+    var kelasIkonKiriNSFW = $("#ikonKiriNSFW").attr("class");
+    var kelasIkonKananNSFW = $("#ikonKananNSFW").attr("class");
+
+    var kelasIkonKiriGTA = $("#ikonKiriGTA").attr("class");
+    var kelasIkonKananGTA = $("#ikonKananGTA").attr("class");
+    // END Daftar Variable
+
     // START Inisialisasi Metode
-    applyHoverEffect('#nsfwButton', '#buttonText', '#ikonKiri', '#ikonKanan', 'NSFW ACCOUNT' ,'X - Twitter', 'bi bi-twitter-x float-start', 'transparent-item float-end');
-    applyHoverEffect('#gtaButton', '#buttonTextGTA', '#ikonKiriGTA', '#ikonKananGTA', 'GTA RP' ,'In Development', 'bi bi-code-square float-start', 'transparent-item float-end');
+    applyHoverEffect('#nsfwButton', '#buttonTextNSFW', '#ikonKiriNSFW', '#ikonKananNSFW', 'NSFW ACCOUNT', 'X - Twitter', kelasIkonKiriNSFW, kelasIkonKananNSFW, 'bi bi-twitter-x float-start', 'transparent-item float-end');
+    applyHoverEffect('#gtaButton', '#buttonTextGTA', '#ikonKiriGTA', '#ikonKananGTA', 'GTA RP', 'In Development', kelasIkonKiriGTA, kelasIkonKananGTA, 'bi bi-code-square float-start', 'transparent-item float-end');
+    applyHoverEffect('#nsfwButtonSideBar', '#buttonTextNSFWSideBar', '#ikonKiriNSFWSideBar', '#ikonKananNSFWSideBar', 'NSFW ACCOUNT', 'X - Twitter', kelasIkonKiriNSFW, kelasIkonKananNSFW, 'bi bi-twitter-x float-start', 'transparent-item float-end');
+    applyHoverEffect('#gtaButtonSideBar', '#buttonTextGTASideBar', '#ikonKiriGTASideBar', '#ikonKananGTASideBar', 'GTA RP', 'In Development', kelasIkonKiriGTA, kelasIkonKananGTA, 'bi bi-code-square float-start', 'transparent-item float-end');
     // END Inisialisasi Metode
 
     // START ETC
-    $('#nsfwButton').click(function (e) {
+    $('.nsfwButton').click(function (e) {
         e.preventDefault();
 
         konfirmasiUmur();
+    });
+
+    $('.dropdown').on('show.bs.dropdown', function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+    });
+
+    $('.dropdown').on('hide.bs.dropdown', function () {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
     });
     // END ETC
 });

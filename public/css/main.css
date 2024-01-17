@@ -13,6 +13,34 @@
     background-color: transparent;
 }
 
+.card {
+    width: 22rem;
+    background-color: rgba(153, 103, 66, 0.1);
+    border-color: rgba(153, 103, 66, 1);
+}
+
+a.btn-primary {
+    --bs-btn-bg: #e29858;
+    --bs-btn-border-color: #e29858;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #ca874b;
+    --bs-btn-hover-color: #ca874b;
+}
+
+.navbar, .offcanvas-header {
+    background-color: #e29858;
+    color: #ffffff;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    border-color: rgb(255, 255, 255);
+}
+
+
 /* efek */
 #nsfwButton, #gtaButton {
     transition: all 0.9s ease-in-out;

@@ -17,12 +17,89 @@
 
 <body>
     <header>
-        <!-- place navbar here -->
+        <nav class="navbar fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand ms-md-5" href="#">Web Card</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Web Card</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    More Info!
+                                </a>
+                                <ul class="dropdown-menu px-2">
+                                    <li class="mb-2">
+                                        <a class="btn btn-primary w-100" href="https://www.instagram.com/plushiewhy/" target="_blank">
+                                            <i class="bi bi-instagram float-start"></i>
+                                            Instagram
+                                            <div class="transparent-item float-end"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="btn btn-primary w-100" href="https://www.facebook.com/Plushiee.Tika" target="_blank">
+                                            <i class="bi bi-facebook float-start"></i>
+                                            Facebook
+                                            <div class="transparent-item float-end"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="btn btn-primary w-100" href="https://twitter.com/Plushiewhy" target="_blank">
+                                            <i class="bi bi-twitter-x float-start"></i>
+                                            X - Twitter
+                                            <div class="transparent-item float-end"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="btn btn-primary w-100" href="https://github.com/Plushiee/" target="_blank">
+                                            <i class="bi bi-github float-start"></i>
+                                            GitHub
+                                            <div class="transparent-item float-end"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="btn btn-outline-secondary w-100" id="gtaButtonSideBar">
+                                            <i class="bi bi-dpad-fill float-start" id="ikonKiriGTASideBar"></i>
+                                            <span id="buttonTextGTASideBar">GTA RP</span>
+                                            <div class="transparent-item float-end" id="ikonKananGTASideBar"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <button type="button" class="btn btn-danger w-100 nsfwButton" id="nsfwButtonSideBar">
+                                            <i class="bi bi-exclamation-triangle-fill float-start" id="ikonKiriNSFWSideBar"></i>
+                                            <span id="buttonTextNSFWSideBar">NSFW ACCOUNT</span>
+                                            <i class="bi bi-exclamation-triangle-fill float-end" id="ikonKananNSFWSideBar"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="container-fluid">
             <div class="card-container row align-items-center">
-                <div class="card p-3 col-md-12" style="width: 22rem;">
+                <div class="card p-3 col-md-12 col-lg-6 mx-auto mx-md-5 my-auto">
                     <img class="rounded-circle shadow-lg card-img-top mx-auto d-block"
                         src="{{ route('instagram.plushiee_profile_picture') }}"
                         alt="Plushiewhy Instagram profile Picture.png">
@@ -61,15 +138,15 @@
                                 GitHub
                                 <div class="transparent-item float-end"></div>
                             </a>
-                            <button class="btn btn-primary" type="button" id="gtaButton">
+                            <a class="btn btn-outline-secondary" type="button" id="gtaButton">
                                 <i class="bi bi-dpad-fill float-start" id="ikonKiriGTA"></i>
                                 <span id="buttonTextGTA">GTA RP</span>
                                 <div class="transparent-item float-end" id="ikonKananGTA"></div>
-                            </button>
-                            <button type="button" class="btn btn-danger" id="nsfwButton">
-                                <i class="bi bi-exclamation-triangle-fill float-start" id="ikonKiri"></i>
-                                <span id="buttonText">NSFW ACCOUNT</span>
-                                <i class="bi bi-exclamation-triangle-fill float-end" id="ikonKanan"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger nsfwButton" id="nsfwButton">
+                                <i class="bi bi-exclamation-triangle-fill float-start" id="ikonKiriNSFW"></i>
+                                <span id="buttonTextNSFW">NSFW ACCOUNT</span>
+                                <i class="bi bi-exclamation-triangle-fill float-end" id="ikonKananNSFW"></i>
                             </button>
                         </div>
                     </div>
