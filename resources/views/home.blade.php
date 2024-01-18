@@ -17,9 +17,9 @@
 
 <body>
     <header>
-        <nav class="navbar fixed-top">
+        <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand ms-md-5" href="#">Web Card</a>
+                <a class="navbar-brand ms-md-5" href="/">Web Card</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Web Card</a>
+                                <a class="nav-link" aria-current="page" href="/">Web Card</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -97,8 +97,8 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid">
-            <div class="card-container row align-items-center">
+        <div class="container-fluid card-container ">
+            <div class="row align-items-center">
                 <div class="card p-3 col-md-12 col-lg-6 mx-auto mx-md-5 my-auto">
                     <img class="rounded-circle shadow-lg card-img-top mx-auto d-block"
                         src="{{ route('instagram.plushiee_profile_picture') }}"
