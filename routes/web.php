@@ -19,5 +19,3 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [WebMainController::class, 'main'])->name('main');
-Route::get('/API/plushiewhy-profile-picture',[WebMainController::class, 'instagram_profile_picture'])->name('instagram.plushiee_profile_picture'); //--> Ambil Profile Picture
-Route::get('/API/fetch-instagram-data',[WebMainController::class, 'instagram_profile_info'])->name('instagram.plushiee_profile_info'); //--> Ambil Profile Picture

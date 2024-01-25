@@ -53,6 +53,7 @@ $(document).ready(function () {
     // END Daftar Variable
 
     // START Inisialisasi Metode
+    AOS.init();
     applyHoverEffect('#nsfwButton', '#buttonTextNSFW', '#ikonKiriNSFW', '#ikonKananNSFW', 'NSFW ACCOUNT', 'X - Twitter', kelasIkonKiriNSFW, kelasIkonKananNSFW, 'bi bi-twitter-x float-start', 'transparent-item float-end');
     applyHoverEffect('#gtaButton', '#buttonTextGTA', '#ikonKiriGTA', '#ikonKananGTA', 'GTA RP', 'In Development', kelasIkonKiriGTA, kelasIkonKananGTA, 'bi bi-code-square float-start', 'transparent-item float-end');
     applyHoverEffect('#nsfwButtonSideBar', '#buttonTextNSFWSideBar', '#ikonKiriNSFWSideBar', '#ikonKananNSFWSideBar', 'NSFW ACCOUNT', 'X - Twitter', kelasIkonKiriNSFW, kelasIkonKananNSFW, 'bi bi-twitter-x float-start', 'transparent-item float-end');

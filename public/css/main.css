@@ -1,20 +1,31 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 main {
     flex: 1;
 }
 
-.card-container {
-    height: 100%;
-    /* display: flex; */
+footer {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.tulisan-tangan {
+    font-family: 'Brush Script MT', cursive;
+}
+
+.container-card {
+    height: 100vh;
+}
+
+.card {
+    max-width: 100%;
+    margin: auto;
 }
 
 .card-img-top {
@@ -34,14 +45,6 @@ main {
     border-color: rgba(153, 103, 66, 1);
 }
 
-a.btn-primary {
-    --bs-btn-bg: #e29858;
-    --bs-btn-border-color: #e29858;
-    --bs-btn-hover-bg: #ffffff;
-    --bs-btn-hover-border-color: #ca874b;
-    --bs-btn-hover-color: #ca874b;
-}
-
 .navbar, .offcanvas-header {
     background-color: #e29858;
     color: #ffffff;
@@ -53,8 +56,31 @@ a.btn-primary {
 
 .navbar-toggler {
     border-color: rgb(255, 255, 255);
+    background-image: url("");
 }
 
+.offcanvas-footer {
+    z-index: -1;
+}
+
+/* Bootstrap */
+a.btn-primary, .btn-outline-primary {
+    --bs-btn-bg: #e29858;
+    --bs-btn-border-color: #e29858;
+    --bs-btn-hover-bg: #ffffff;
+    --bs-btn-hover-border-color: #ca874b;
+    --bs-btn-hover-color: #ca874b;
+    --bs-btn-color: var(--bs-white);
+}
+
+.offcanvas {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.navbar-toggler-icon {
+    border-color: rgb(255, 255, 255);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 
 /* efek */
 #nsfwButton, #gtaButton {
