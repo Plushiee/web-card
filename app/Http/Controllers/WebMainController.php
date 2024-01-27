@@ -41,7 +41,7 @@ class WebMainController extends Controller
 
     public function getMap()
     {
-        $targetUrl = 'http://api.plushiee.my.id/get-map';
+        $targetUrl = 'https://api.plushiee.my.id/get-minecraft-map/';
 
         return Redirect::away($targetUrl);
     }
