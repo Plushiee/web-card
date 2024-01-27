@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Exception;
 
 class WebMainController extends Controller
@@ -40,11 +41,9 @@ class WebMainController extends Controller
 
     public function getMap()
     {
-        $targetUrl = 'https://minecraft.plushiee.my.id/';
+        $targetUrl = 'http://api.plushiee.my.id/get-map';
 
-        $response = Http::get($targetUrl);
-
-        return $response->body();
+        return Redirect::away($targetUrl);
     }
 
     public function instagram_profile_info()

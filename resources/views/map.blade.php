@@ -11,7 +11,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/map.css">
     <!-- END CSS CDN -->
 
 </head>
@@ -23,7 +23,7 @@
                 <a class="navbar-brand ms-md-5 p-0" href="/">
                     <img src="/img/navbar/PlushieWhy watermark.png" class="d-inline-block align-text-top" alt="Logo"
                         width="130">
-                    <span class="tulisan-tangan d-none d-md-inline">Web Card</span>
+                    <span class="tulisan-tangan d-none d-md-inline">Web Map</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -36,8 +36,7 @@
                             <img src="/img/navbar/PlushieWhy watermark.png" class="d-inline-block align-text-top"
                                 alt="Logo" width="100">
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -45,8 +44,8 @@
                                 <a class="nav-link" aria-current="page" href="/">Web Card</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
                                     More Info!
                                 </a>
                                 <ul class="dropdown-menu px-2">
@@ -71,14 +70,6 @@
                                             target="_blank">
                                             <i class="bi bi-twitter-x float-start"></i>
                                             X - Twitter
-                                            <div class="transparent-item float-end"></div>
-                                        </a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a class="btn btn-primary w-100" href="https://minecraft.plushiee.my.id"
-                                            target="_blank">
-                                            <i class="bi bi-map float-start"></i>
-                                            Minecraft Server Map
                                             <div class="transparent-item float-end"></div>
                                         </a>
                                     </li>
@@ -119,18 +110,17 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid vh-100">
-            <noscript>
-                For full functionality of this site it is necessary to enable JavaScript.
-                Here are the <a href="http://www.enable-javascript.com/" target="_blank">
-                    instructions how to enable JavaScript in your web browser</a>.
-            </noscript>
-
-            <iframe src="https://minecraft.plushiee.my.id/" width="100%" height="500px" frameborder="0"></iframe>
+        <noscript>
+            For full functionality of this site it is necessary to enable JavaScript.
+            Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+                instructions how to enable JavaScript in your web browser</a>.
+        </noscript>
+        <div class="container-fluid main px-0">
+            <iframe src="{{ route('minecraft.map') }}" frameborder="0"></iframe>
         </div>
     </main>
-    <footer class="text-center p-0 offcanvas-footer" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+    <footer class="text-center p-0 offcanvas-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+        data-aos-duration="1500">
         </div>
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -142,11 +132,11 @@
     <!-- START Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- END Bootstrap JavaScript Libraries -->
 
     <!-- START CDNnya Script-->
@@ -158,6 +148,7 @@
 
     <!-- START JavaScript -->
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/map.js') }}"></script>
     <!-- END JavaScript -->
 </body>
 
