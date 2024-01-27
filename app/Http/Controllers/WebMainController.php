@@ -34,6 +34,19 @@ class WebMainController extends Controller
         }
     }
 
+    public function map () {
+        return view('map');
+    }
+
+    public function getMap()
+    {
+        $targetUrl = 'https://minecraft.plushiee.my.id/';
+
+        $response = Http::get($targetUrl);
+
+        return $response->body();
+    }
+
     public function instagram_profile_info()
     {
         try {

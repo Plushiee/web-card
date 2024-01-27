@@ -19,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [WebMainController::class, 'main'])->name('main');
+Route::get('/map', [WebMainController::class, 'map'])->name('map');
+
+// API Start
+Route::get('/API/get-minecraft-map', [WebMainController::class, 'getMap'])->name('minecraft.map');
+// API End

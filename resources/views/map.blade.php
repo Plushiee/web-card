@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Plushiee Web Card</title>
+    <title>Plushiee Minecraft Map</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <nav class="navbar fixed-top">
+        <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand ms-md-5 p-0" href="/">
                     <img src="/img/navbar/PlushieWhy watermark.png" class="d-inline-block align-text-top" alt="Logo"
@@ -75,6 +75,14 @@
                                         </a>
                                     </li>
                                     <li class="mb-2">
+                                        <a class="btn btn-primary w-100" href="https://minecraft.plushiee.my.id"
+                                            target="_blank">
+                                            <i class="bi bi-map float-start"></i>
+                                            Minecraft Server Map
+                                            <div class="transparent-item float-end"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
                                         <a class="btn btn-outline-secondary w-100" id="gtaButtonSideBar">
                                             <i class="bi bi-dpad-fill float-start" id="ikonKiriGTASideBar"></i>
                                             <span id="buttonTextGTASideBar">GTA RP</span>
@@ -111,57 +119,17 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid main">
-            <div class="container-card row align-items-center pt-3 pt-sm-0">
-                <div class="card p-3 col-md-12 col-lg-6 mx-auto mx-md-5 my-auto">
-                    <img class="rounded-circle shadow-lg card-img-top mx-auto d-block" src="{{ $profilePictureUrl }}"
-                        alt="Plushiewhy Instagram profile Picture.png">
-                    <div class="card-body text-center">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <h5 class="card-title text-center">@PlushieWhy</a></h5>
-                        <p class="card-text mb-0 pb-0" id="jumlahInstagram"> <b
-                                class="text-muted">{{ $followersCount }}</b>
-                            Followers <i class="bi bi-dot"></i> <b class="text-muted">{{ $followingCount }}</b>
-                            Following
-                        </p>
-                        <p class="card-text mt-0 pt-0" id="jumlahPost"><b class="text-muted">{{ $postsCount }}</b>
-                            Post </p>
-                        <div class="d-grid gap-2">
-                            <a href="https://www.instagram.com/plushiewhy/" target="_blank" class="btn btn-primary"
-                                type="button">
-                                <i class="bi bi-instagram float-start"></i>
-                                Instagram
-                                <div class="transparent-item float-end"></div>
-                            </a>
-                            <a href="https://www.facebook.com/Plushiee.Tika" target="_blank" class="btn btn-primary"
-                                type="button">
-                                <i class="bi bi-facebook float-start"></i>
-                                Facebook
-                                <div class="transparent-item float-end"></div>
-                            </a>
-                            <a href="https://twitter.com/Plushiewhy" target="_blank" class="btn btn-primary"
-                                type="button">
-                                <i class="bi bi-twitter-x float-start"></i>
-                                X - Twitter
-                                <div class="transparent-item float-end"></div>
-                            </a>
-                            <a class="btn btn-outline-secondary" type="button" id="gtaButton">
-                                <i class="bi bi-dpad-fill float-start" id="ikonKiriGTA"></i>
-                                <span id="buttonTextGTA">GTA RP</span>
-                                <div class="transparent-item float-end" id="ikonKananGTA"></div>
-                            </a>
-                            <button type="button" class="btn btn-danger nsfwButton" id="nsfwButton">
-                                <i class="bi bi-exclamation-triangle-fill float-start" id="ikonKiriNSFW"></i>
-                                <span id="buttonTextNSFW">NSFW ACCOUNT</span>
-                                <i class="bi bi-exclamation-triangle-fill float-end" id="ikonKananNSFW"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container-fluid vh-100">
+            <noscript>
+                For full functionality of this site it is necessary to enable JavaScript.
+                Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+                    instructions how to enable JavaScript in your web browser</a>.
+            </noscript>
+
+            <iframe src="https://minecraft.plushiee.my.id/" width="100%" height="500px" frameborder="0"></iframe>
         </div>
     </main>
-    <footer class="text-center p-0 fixed-bottom offcanvas-footer" data-aos="fade-up"
+    <footer class="text-center p-0 offcanvas-footer" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         </div>
         <!-- Copyright -->
