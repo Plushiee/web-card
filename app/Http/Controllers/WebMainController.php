@@ -49,7 +49,7 @@ class WebMainController extends Controller
     public function instagram_profile_info()
     {
         try {
-            $response = Http::get('https://www.instagram.com/plushiewhy/');
+            $response = Http::get('');
             $akunInstagram = $response->body();
 
             // Mencocokkan pola data didapat menggunakan ekspresi reguler
