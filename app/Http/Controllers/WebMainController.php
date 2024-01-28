@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\InstagramModel;
+use Carbon\Carbon;
 use Exception;
 
 class WebMainController extends Controller
@@ -35,7 +37,8 @@ class WebMainController extends Controller
         }
     }
 
-    public function map () {
+    public function map()
+    {
         return view('map');
     }
 
@@ -49,6 +52,21 @@ class WebMainController extends Controller
     public function instagram_profile_info()
     {
         try {
+            // Ambil data dari database
+            $instagramData = InstagramModel::first(); // Ubah sesuai dengan model dan kondisi Anda
+            $lastUpdatedAt = $instagramData->updated_at;
+
+            // Periksa apakah data perlu diperbarui
+            if ($lastUpdatedAt && $lastUpdatedAt->diffInHours(Carbon::now()) < 24) {
+                // Jika waktu belum melebihi 25 jam, kembalikan data dari database
+                return response()->json([
+                    'followersCount' => $instagramData->follower,
+                    'followingCount' => $instagramData->following,
+                    'postsCount' => $instagramData->posts,
+                    'profilePictureUrl' => $instagramData->pfp,
+                ]);
+            }
+
             $response = Http::get('');
             $akunInstagram = $response->body();
 
@@ -58,7 +76,13 @@ class WebMainController extends Controller
 
             // Memeriksa apakah data yang diambil sesuai
             if (!$match || count($match) < 4) {
-                throw new Exception('Tidak dapat mencari jumalah followers, following, and post');
+                \Log::warning('Tidak dapat mencari jumalah followers, following, and post terbaru');
+                return response()->json([
+                    'followersCount' => $instagramData->follower,
+                    'followingCount' => $instagramData->following,
+                    'postsCount' => $instagramData->posts,
+                    'profilePictureUrl' => $instagramData->pfp,
+                ]);
             }
 
             // Mendapatkan count follower, following, dan posts
@@ -79,6 +103,13 @@ class WebMainController extends Controller
             $profilePictureUrl = html_entity_decode($pictureMatch[1]);
 
             \Log::info('Instagram PFP Link:' . $profilePictureUrl);
+
+            $instagramData->update([
+                'follower' => $followersCount,
+                'following' => $followingCount,
+                'posts' => $postsCount,
+                'pfp' => $profilePictureUrl,
+            ]);
 
             return response()->json([
                 'followersCount' => $followersCount,
