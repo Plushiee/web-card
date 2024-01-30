@@ -17,5 +17,6 @@ class InstagramModel extends Model
         'follower',
         'following',
         'pfp',
+        'updated_at',
     ];
 }

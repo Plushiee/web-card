@@ -58,7 +58,8 @@ class WebMainController extends Controller
 
             // Periksa apakah data perlu diperbarui
             if ($lastUpdatedAt && $lastUpdatedAt->diffInHours(Carbon::now()) < 24) {
-                // Jika waktu belum melebihi 25 jam, kembalikan data dari database
+                // Jika waktu belum melebihi 24 jam, kembalikan data dari database
+                \Log::warning('Belum 24 Jam!');
                 return response()->json([
                     'followersCount' => $instagramData->follower,
                     'followingCount' => $instagramData->following,
@@ -67,7 +68,7 @@ class WebMainController extends Controller
                 ]);
             }
 
-            $response = Http::get('');
+            $response = Http::get('https://www.instagram.com/plushiewhy/');
             $akunInstagram = $response->body();
 
             // Mencocokkan pola data didapat menggunakan ekspresi reguler
@@ -77,6 +78,14 @@ class WebMainController extends Controller
             // Memeriksa apakah data yang diambil sesuai
             if (!$match || count($match) < 4) {
                 \Log::warning('Tidak dapat mencari jumalah followers, following, and post terbaru');
+                $instagramData->update([
+                    'follower' => $instagramData->follower,
+                    'following' => $instagramData->following,
+                    'posts' => $instagramData->posts,
+                    'pfp' => $instagramData->pfp,
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s') 
+                ]);
+                    
                 return response()->json([
                     'followersCount' => $instagramData->follower,
                     'followingCount' => $instagramData->following,
