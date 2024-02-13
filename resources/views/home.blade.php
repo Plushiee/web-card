@@ -111,6 +111,11 @@
         </nav>
     </header>
     <main>
+        <div class="container-background">
+            <img src="/img/background/63_onlyback.png" id="langit" alt="langit.png">
+            <img src="/img/background/63_onlychar.png" id="karakter" alt="karakter.png">
+            <img src="/img/background/63_onlywatermark.png" id="watermark" alt="watermark.png">
+        </div>
         <div class="container-fluid main">
             <div class="container-card row align-items-center pt-3 pt-sm-0">
                 <div class="card p-3 col-md-12 col-lg-6 mx-auto mx-md-5 my-auto">
@@ -165,9 +170,9 @@
         data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
         </div>
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2023 - 2024 Copyright:
-            <a class="text-body" href="https://www.instagram.com/plushiewhy/">@PlushieWhy</a>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.20); color: white;">
+            © 2023 - 2024 Copyright :
+            <a class="text-body" href="https://www.instagram.com/plushiewhy/" style="color: white;">@PlushieWhy</a>
         </div>
         <!-- Copyright -->
     </footer>
@@ -189,6 +194,24 @@
     <!-- END CDNnya Script-->
 
     <!-- START JavaScript -->
+    <script>
+        $(document).ready(function () {
+          // Mengikuti pergerakan kursor
+          $(document).mousemove(function (e) {
+            parallaxImage(e, '#langit', 20);
+            parallaxImage(e, '#karakter', 10); // Adjust the parallax effect speed
+            // parallaxImage(e, '#watermark', 5);
+          });
+    
+          // Fungsi untuk menangani efek paralaks pada gambar
+          function parallaxImage(event, target, speed) {
+            var xPos = event.pageX / $(window).width() * 100 - 10;
+            var yPos = event.pageY / $(window).height() * 100 - 10;
+    
+            $(target).css('transform', 'translate(' + xPos / speed + 'px, ' + yPos / speed + 'px)');
+          }
+        });
+      </script>
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- END JavaScript -->
 </body>

@@ -45,7 +45,8 @@ footer {
     border-color: rgba(153, 103, 66, 1);
 }
 
-.navbar, .offcanvas-header {
+.navbar,
+.offcanvas-header {
     background-color: #e29858;
     color: #ffffff;
 }
@@ -64,7 +65,8 @@ footer {
 }
 
 /* Bootstrap */
-a.btn-primary, .btn-outline-primary {
+a.btn-primary,
+.btn-outline-primary {
     --bs-btn-bg: #e29858;
     --bs-btn-border-color: #e29858;
     --bs-btn-hover-bg: #ffffff;
@@ -82,7 +84,41 @@ a.btn-primary, .btn-outline-primary {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.container-background {
+    /* position: relative; */
+    /* height: 100vh; */
+    overflow: hidden;
+  }
+
+#langit,
+#karakter,
+#watermark {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    transition: transform 0.2s ease-out;
+}
+
+#karakter {
+    width: auto;
+    height: 100%;
+    right: 0;
+}
+
+#langit {
+    /* object-fit: contain; */
+    width: 100%;
+}
+
+#watermark {
+    object-fit: fill;
+}
+
 /* efek */
-#nsfwButton, #gtaButton {
+#nsfwButton,
+#gtaButton {
     transition: all 0.9s ease-in-out;
 }
