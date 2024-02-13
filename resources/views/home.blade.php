@@ -113,7 +113,8 @@
     <main>
         <div class="container-background">
             <img src="/img/background/63_onlyback.png" id="langit" alt="langit.png">
-            <img src="/img/background/63_onlychar.png" id="karakter" alt="karakter.png">
+            <img src="/img/background/63_onlychar.png" id="karakter" alt="karakter.png" data-aos="fade-left"
+                data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1500">
             <img src="/img/background/63_onlywatermark.png" id="watermark" alt="watermark.png">
         </div>
         <div class="container-fluid main">
@@ -195,23 +196,25 @@
 
     <!-- START JavaScript -->
     <script>
-        $(document).ready(function () {
-          // Mengikuti pergerakan kursor
-          $(document).mousemove(function (e) {
-            parallaxImage(e, '#langit', 20);
-            parallaxImage(e, '#karakter', 10); // Adjust the parallax effect speed
-            // parallaxImage(e, '#watermark', 5);
-          });
-    
-          // Fungsi untuk menangani efek paralaks pada gambar
-          function parallaxImage(event, target, speed) {
-            var xPos = event.pageX / $(window).width() * 100 - 10;
-            var yPos = event.pageY / $(window).height() * 100 - 10;
-    
-            $(target).css('transform', 'translate(' + xPos / speed + 'px, ' + yPos / speed + 'px)');
-          }
+        $(document).ready(function() {
+            $(document).mousemove(function(e) {
+                parallaxImage(e, '#karakter', 20, false);
+                parallaxImage(e, '#langit', 5, true);
+            });
+
+            function parallaxImage(event, target, speed, inverted) {
+                var xPos = event.pageX / $(window).width() * 100;
+                var yPos = event.pageY / $(window).height() * 100 - 70;
+
+                // Menggunakan nilai negatif langsung tanpa perlu inverted
+                var xTranslation = inverted ? -xPos / speed : xPos / speed;
+                var yTranslation = inverted ? -yPos / speed : yPos / speed;
+
+                $(target).css('transform', 'translate(' + xTranslation + 'px, ' + yTranslation + 'px)');
+            }
         });
-      </script>
+    </script>
+
     <script src="{{ asset('js/main.js') }}"></script>
     <!-- END JavaScript -->
 </body>
