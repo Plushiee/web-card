@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
+    overflow-x: hidden;
 }
 
 main {
@@ -42,8 +43,8 @@ footer {
 
 .card {
     width: 22rem;
-    background-color: rgba(153, 103, 66, 0.1);
-    border-color: rgba(153, 103, 66, 1);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgb(213, 137, 78);
 }
 
 .navbar,
@@ -62,7 +63,7 @@ footer {
 }
 
 .offcanvas-footer {
-    z-index: -1;
+    z-index: -3;
 }
 
 /* Bootstrap */
@@ -74,6 +75,10 @@ a.btn-primary,
     --bs-btn-hover-border-color: #ca874b;
     --bs-btn-hover-color: #ca874b;
     --bs-btn-color: var(--bs-white);
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #c48147;
+    --bs-btn-active-border-color: #c48147;
+    ;
 }
 
 .offcanvas {
@@ -85,6 +90,18 @@ a.btn-primary,
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.container-background {
+    z-index: -3;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+}
+
+.h5 {
+    color: white;
+}
+
 #langit,
 #karakter,
 #watermark {
@@ -93,25 +110,29 @@ a.btn-primary,
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -2;
     transition: transform 0.2s ease-out;
+    overflow: hidden;
+    z-index: 0;
 }
 
 #karakter {
     width: auto;
     height: 100%;
-    right: -30px;
-    top: 20px;
+    right: -2%;
+    top: 5%;
+    overflow: hidden;
 }
 
 #langit {
-    height: 110%;
+    max-width: 150%;
     width: auto;
-    right: -100px;
-    /* top: -500px; */
+    min-width: 145%;
+    overflow: hidden;
+    top: 1.3%;
 }
 
 #watermark {
+    object-fit: fill;
     width: 50%;
     height: auto;
     right: 0;
@@ -122,4 +143,18 @@ a.btn-primary,
 #nsfwButton,
 #gtaButton {
     transition: all 0.9s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    #karakter {
+        right: -25%;
+    }
+
+    #langit {
+        width: 150%;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
 }

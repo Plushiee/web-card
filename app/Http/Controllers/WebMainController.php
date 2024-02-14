@@ -13,29 +13,29 @@ class WebMainController extends Controller
 {
     public function main()
     {
-        // try {
-        //     $instagramProfileInfoResponse = $this->instagram_profile_info();
-        //     $instagramProfileInfo = $instagramProfileInfoResponse->getData();
+        try {
+            $instagramProfileInfoResponse = $this->instagram_profile_info();
+            $instagramProfileInfo = $instagramProfileInfoResponse->getData();
 
-        //     \Log::info('Instagram Profile Info:', (array) $instagramProfileInfo);
+            \Log::info('Instagram Profile Info:', (array) $instagramProfileInfo);
 
-        //     $followersCount = $instagramProfileInfo->followersCount ?? '';
-        //     $followingCount = $instagramProfileInfo->followingCount ?? '';
-        //     $postsCount = $instagramProfileInfo->postsCount ?? '';
-        //     $profilePictureUrl = $instagramProfileInfo->profilePictureUrl ?? '';
+            $followersCount = $instagramProfileInfo->followersCount ?? '';
+            $followingCount = $instagramProfileInfo->followingCount ?? '';
+            $postsCount = $instagramProfileInfo->postsCount ?? '';
+            $profilePictureUrl = $instagramProfileInfo->profilePictureUrl ?? '';
 
-        //     return view('home', compact('followersCount', 'followingCount', 'postsCount', 'profilePictureUrl'));
-        // } catch (Exception $e) {
-        //     \Log::error('Error pada fungsi main : ' . $e->getMessage());
+            return view('home', compact('followersCount', 'followingCount', 'postsCount', 'profilePictureUrl'));
+        } catch (Exception $e) {
+            \Log::error('Error pada fungsi main : ' . $e->getMessage());
 
             return view('home', [
                 'followersCount' => '-',
                 'followingCount' => '-',
                 'postsCount' => '-',
-                'profilePictureUrl' => '-'
-                // 'error' => $e->getMessage(),
+                'profilePictureUrl' => '-',
+                'error' => $e->getMessage(),
             ]);
-        // }
+        }
     }
 
     public function map()
@@ -84,9 +84,9 @@ class WebMainController extends Controller
                     'following' => $instagramData->following,
                     'posts' => $instagramData->posts,
                     'pfp' => $instagramData->pfp,
-                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s') 
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ]);
-                    
+
                 return response()->json([
                     'followersCount' => $instagramData->follower,
                     'followingCount' => $instagramData->following,

@@ -42,6 +42,18 @@ $(document).ready(function () {
             }
         );
     }
+
+    function parallaxImage(event, target, speed, inverted) {
+        var xPos = event.pageX / $(window).width() * 1000;
+        var yPos = event.pageY / $(window).height() * 100 - 70;
+
+        var xTranslation = inverted ? -xPos / speed : xPos / speed;
+        var yTranslation = inverted ? -yPos / speed : yPos / speed;
+
+        xTranslation = Math.min(Math.max(xTranslation, -100), 100);
+
+        $(target).css('transform', 'translate(' + xTranslation + 'px, ' + yTranslation + 'px)');
+    }
     // END Daftar Function
 
     // START Daftar Variable
@@ -73,6 +85,11 @@ $(document).ready(function () {
 
     $('.dropdown').on('hide.bs.dropdown', function () {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+    });
+
+    $(document).mousemove(function (e) {
+        parallaxImage(e, '#karakter', 20, false);
+        parallaxImage(e, '#langit', 5, true);
     });
     // END ETC
 });
