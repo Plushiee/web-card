@@ -75,7 +75,7 @@
                                         </a>
                                     </li>
                                     <li class="mb-2">
-                                        <a class="btn btn-primary w-100" href="https://plushie.my.id/map"
+                                        <a class="btn btn-primary w-100" href="https://plushiee.my.id/map"
                                             target="_blank">
                                             <i class="bi bi-map float-start"></i>
                                             Mineceraft Server
@@ -159,7 +159,7 @@
                                 X - Twitter
                                 <div class="transparent-item float-end"></div>
                             </a>
-                            <a class="btn btn-primary w-100" href="https://plushie.my.id/map" target="_blank">
+                            <a class="btn btn-primary w-100" href="https://plushiee.my.id/map" target="_blank">
                                 <i class="bi bi-map float-start"></i>
                                 Mineceraft Server
                                 <div class="transparent-item float-end"></div>
