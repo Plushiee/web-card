@@ -3,6 +3,7 @@
 
 <head>
     <title>Plushiee Web Card</title>
+    <meta name="keywords" content="Plushiee, web, card, furry" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -94,7 +95,7 @@
                                             id="nsfwButtonSideBar">
                                             <i class="bi bi-exclamation-triangle-fill float-start"
                                                 id="ikonKiriNSFWSideBar"></i>
-                                            <span id="buttonTextNSFWSideBar">NSFW ACCOUNT</span>
+                                            <span id="buttonTextNSFWSideBar">ANOTHER ACCOUNT</span>
                                             <i class="bi bi-exclamation-triangle-fill float-end"
                                                 id="ikonKananNSFWSideBar"></i>
                                         </button>
@@ -128,8 +129,8 @@
         <div class="container-fluid main">
             <div class="container-card row align-items-center pt-3 pt-sm-0">
                 <div class="card p-3 col-md-12 col-lg-6 mx-auto mx-md-5 my-auto">
-                    <img class="rounded-circle shadow-lg card-img-top mx-auto d-block" src="{{ $profilePictureUrl }}"
-                        alt="Plushiewhy Instagram profile Picture.png">
+                    <img class="rounded-circle shadow-lg card-img-top mx-auto d-block" src="{{ $profilePictureUrl }}" data-profilePictureUrl="{{ $profilePictureUrl }}"
+                        alt="Plushiewhy Instagram profile Picture.png" id="profilePicture">
                     <div class="card-body text-center">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <h5 class="card-title text-center">@PlushieWhy</h5>

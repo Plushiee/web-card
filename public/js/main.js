@@ -1,6 +1,8 @@
 $(document).ready(function () {
     // START Daftar Function
     function konfirmasiUmur() {
+        var profilePictureUrl = $("#profilePicture").data("profilePictureUrl");
+
         Swal.fire({
             icon: "warning",
             title: 'Age Confirmation',
@@ -19,7 +21,22 @@ $(document).ready(function () {
             allowOutsideClick: () => !Swal.isLoading(),
         }).then((result) => {
             if (result.isConfirmed) {
-                window.open('https://twitter.com/mengapaboneka', '_blank'); 3
+                Swal.fire({
+                    title: 'DM Me!',
+                    text: `Feel free to DM me and I'll tell you (｡•̀ᴗ-)✧`,
+                    imageUrl: profilePictureUrl,
+                    imageAlt: 'Plushiewhy Instagram profile Picture.png',
+                    showCancelButton: true,
+                    confirmButtonText: 'DM~',
+                    cancelButtonText: 'Cancel',
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#e03444',
+                    allowOutsideClick: () => !Swal.isLoading(),
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.open('https://www.instagram.com/plushiewhy/', '_blank'); 3
+                    }
+                });
             }
         });
     }
