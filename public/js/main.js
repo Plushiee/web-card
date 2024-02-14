@@ -2,6 +2,7 @@ $(document).ready(function () {
     // START Daftar Function
     function konfirmasiUmur() {
         var profilePictureUrl = $("#profilePicture").data("profilePictureUrl");
+        console.log(profilePictureUrl);
 
         Swal.fire({
             icon: "warning",
@@ -31,7 +32,6 @@ $(document).ready(function () {
                     cancelButtonText: 'Cancel',
                     showLoaderOnConfirm: true,
                     confirmButtonColor: '#e03444',
-                    allowOutsideClick: () => !Swal.isLoading(),
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.open('https://www.instagram.com/plushiewhy/', '_blank'); 3
