@@ -19,10 +19,10 @@ class WebMainController extends Controller
 
             \Log::info('Instagram Profile Info:', (array) $instagramProfileInfo);
 
-            $followersCount = $instagramProfileInfo->followersCount ?? '';
-            $followingCount = $instagramProfileInfo->followingCount ?? '';
-            $postsCount = $instagramProfileInfo->postsCount ?? '';
-            $profilePictureUrl = $instagramProfileInfo->profilePictureUrl ?? '';
+            $followersCount = $instagramProfileInfo->followersCount ?? '-';
+            $followingCount = $instagramProfileInfo->followingCount ?? '-';
+            $postsCount = $instagramProfileInfo->postsCount ?? '-';
+            $profilePictureUrl = $instagramProfileInfo->profilePictureUrl ?? '-';
 
             return view('home', compact('followersCount', 'followingCount', 'postsCount', 'profilePictureUrl'));
         } catch (Exception $e) {

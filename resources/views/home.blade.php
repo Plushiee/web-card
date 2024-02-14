@@ -122,15 +122,18 @@
     <main>
         <div class="container-background" id="container-background">
             <img src="/img/background/63_onlyback.png" id="langit" alt="langit.png">
-            <img src="/img/background/63_onlychar.png" id="karakter" alt="karakter.png" data-aos="fade-left" data-aos-duration="3000">
+            <img src="/img/background/63_onlychar.png" id="karakter" alt="karakter.png" data-aos="fade-left"
+                data-aos-duration="3000">
             <img src="/img/background/63_onlywatermark.png" id="watermark" alt="watermark.png"
                 class="d-none d-md-block">
         </div>
         <div class="container-fluid main">
             <div class="container-card row align-items-center pt-3 pt-sm-0">
                 <div class="card p-3 col-md-12 col-lg-6 mx-auto mx-md-5 my-auto">
-                    <img class="rounded-circle shadow-lg card-img-top mx-auto d-block" src="{{ $profilePictureUrl }}" data-profilePictureUrl="{{ $profilePictureUrl }}"
+                    <img class="rounded-circle shadow-lg card-img-top mx-auto d-block" src="{{ $profilePictureUrl }}"
+                        data-profile-picture-url="{{ $profilePictureUrl }}"
                         alt="Plushiewhy Instagram profile Picture.png" id="profilePicture">
+
                     <div class="card-body text-center">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <h5 class="card-title text-center">@PlushieWhy</h5>

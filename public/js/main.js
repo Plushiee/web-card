@@ -11,7 +11,6 @@ $(document).ready(function () {
             showCancelButton: true,
             confirmButtonText: 'Enter',
             cancelButtonText: 'Cancel',
-            showLoaderOnConfirm: true,
             confirmButtonColor: '#e03444',
             preConfirm: () => {
                 const checkbox = Swal.getPopup().querySelector("#checkboxKonfirmasiUmur");
@@ -29,7 +28,6 @@ $(document).ready(function () {
                     showCancelButton: true,
                     confirmButtonText: 'DM~',
                     cancelButtonText: 'Cancel',
-                    showLoaderOnConfirm: true,
                     confirmButtonColor: '#e03444',
                 }).then((result) => {
                     if (result.isConfirmed) {
