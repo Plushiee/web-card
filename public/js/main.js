@@ -19,7 +19,6 @@ $(document).ready(function () {
                     Swal.showValidationMessage('You must confirm your age to enter.');
                 }
             },
-            allowOutsideClick: () => !Swal.isLoading(),
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
