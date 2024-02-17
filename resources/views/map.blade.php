@@ -36,19 +36,20 @@
                             <img src="/img/navbar/PlushieWhy watermark.png" class="d-inline-block align-text-top"
                                 alt="Logo" width="100">
                         </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="/">Web Card</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                            <li class="nav-item dropdown info-dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     More Info!
                                 </a>
-                                <ul class="dropdown-menu px-2">
+                                <ul class="dropdown-menu px-2 info-dropdown-menu">
                                     <li class="mb-2">
                                         <a class="btn btn-primary w-100" href="https://www.instagram.com/plushiewhy/"
                                             target="_blank">
@@ -74,7 +75,15 @@
                                         </a>
                                     </li>
                                     <li class="mb-2">
-                                        <a class="btn btn-outline-secondary w-100" id="gtaButtonSideBar">
+                                        <a class="btn btn-primary w-100" href="https://plushiee.my.id/map"
+                                            target="_blank">
+                                            <i class="bi bi-map float-start"></i>
+                                            Mineceraft Server
+                                            <div class="transparent-item float-end"></div>
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a class="btn btn-primary w-100" id="gtaButtonSideBar">
                                             <i class="bi bi-dpad-fill float-start" id="ikonKiriGTASideBar"></i>
                                             <span id="buttonTextGTASideBar">GTA RP</span>
                                             <div class="transparent-item float-end" id="ikonKananGTASideBar"></div>
@@ -85,7 +94,7 @@
                                             id="nsfwButtonSideBar">
                                             <i class="bi bi-exclamation-triangle-fill float-start"
                                                 id="ikonKiriNSFWSideBar"></i>
-                                            <span id="buttonTextNSFWSideBar">NSFW ACCOUNT</span>
+                                            <span id="buttonTextNSFWSideBar">ANOTHER ACCOUNT</span>
                                             <i class="bi bi-exclamation-triangle-fill float-end"
                                                 id="ikonKananNSFWSideBar"></i>
                                         </button>
@@ -105,7 +114,73 @@
                             </div>
                         </form>
                     </div>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Web Card</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                More Info!
+                            </a>
+                            <ul class="dropdown-menu px-2">
+                                <li class="mb-2">
+                                    <a class="btn btn-primary w-100" href="https://www.instagram.com/plushiewhy/"
+                                        target="_blank">
+                                        <i class="bi bi-instagram float-start"></i>
+                                        Instagram
+                                        <div class="transparent-item float-end"></div>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a class="btn btn-primary w-100" href="https://www.facebook.com/Plushiee.Tika"
+                                        target="_blank">
+                                        <i class="bi bi-facebook float-start"></i>
+                                        Facebook
+                                        <div class="transparent-item float-end"></div>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a class="btn btn-primary w-100" href="https://twitter.com/Plushiewhy"
+                                        target="_blank">
+                                        <i class="bi bi-twitter-x float-start"></i>
+                                        X - Twitter
+                                        <div class="transparent-item float-end"></div>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a class="btn btn-outline-secondary w-100" id="gtaButtonSideBar">
+                                        <i class="bi bi-dpad-fill float-start" id="ikonKiriGTASideBar"></i>
+                                        <span id="buttonTextGTASideBar">GTA RP</span>
+                                        <div class="transparent-item float-end" id="ikonKananGTASideBar"></div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-danger w-100 nsfwButton"
+                                        id="nsfwButtonSideBar">
+                                        <i class="bi bi-exclamation-triangle-fill float-start"
+                                            id="ikonKiriNSFWSideBar"></i>
+                                        <span id="buttonTextNSFWSideBar">NSFW ACCOUNT</span>
+                                        <i class="bi bi-exclamation-triangle-fill float-end"
+                                            id="ikonKananNSFWSideBar"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="mt-3" role="search">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="artCode" class="form-label">Art Tracking</label>
+                            <div class="input-group">
+                                <input class="form-control me-2" type="search" placeholder="Art Code..."
+                                    aria-label="Art Code..." name="artCode">
+                                <button class="btn btn-outline-primary" type="submit">Coming Soon!</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -132,11 +207,11 @@
     <!-- START Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-        </script>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-        </script>
+    </script>
     <!-- END Bootstrap JavaScript Libraries -->
 
     <!-- START CDNnya Script-->
