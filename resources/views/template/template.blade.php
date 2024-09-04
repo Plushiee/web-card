@@ -6,6 +6,7 @@
     <meta name="keywords" content="Plushiee, web, card, furry" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
 
     <!-- START CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -76,29 +77,12 @@
                                         </a>
                                     </li>
                                     <li class="mb-2">
-                                        <a class="btn btn-primary w-100" href="https://plushiee.my.id/map"
-                                            target="_blank">
-                                            <i class="bi bi-map float-start"></i>
-                                            Mineceraft Server
+                                        <a href="https://discord.com/users/plushiee" target="_blank"
+                                            class="btn btn-primary w-100" type="button">
+                                            <i class="bi bi-discord float-start"></i>
+                                            Discord
                                             <div class="transparent-item float-end"></div>
                                         </a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a class="btn btn-primary w-100" id="gtaButtonSideBar">
-                                            <i class="bi bi-dpad-fill float-start" id="ikonKiriGTASideBar"></i>
-                                            <span id="buttonTextGTASideBar">GTA RP</span>
-                                            <div class="transparent-item float-end" id="ikonKananGTASideBar"></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="btn btn-danger w-100 nsfwButton"
-                                            id="nsfwButtonSideBar">
-                                            <i class="bi bi-exclamation-triangle-fill float-start"
-                                                id="ikonKiriNSFWSideBar"></i>
-                                            <span id="buttonTextNSFWSideBar">ANOTHER ACCOUNT</span>
-                                            <i class="bi bi-exclamation-triangle-fill float-end"
-                                                id="ikonKananNSFWSideBar"></i>
-                                        </button>
                                     </li>
                                 </ul>
                             </li>

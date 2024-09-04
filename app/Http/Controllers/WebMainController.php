@@ -58,9 +58,9 @@ class WebMainController extends Controller
             $lastUpdatedAt = $instagramData->updated_at;
 
             // Periksa apakah data perlu diperbarui
-            if ($lastUpdatedAt && $lastUpdatedAt->diffInHours(Carbon::now()) < 24) {
-                // Jika waktu belum melebihi 24 jam, kembalikan data dari database
-                \Log::warning('Belum 24 Jam!');
+            if ($lastUpdatedAt && $lastUpdatedAt->diffInHours(Carbon::now()) < 48) {
+                // Jika waktu belum melebihi 48 jam, kembalikan data dari database
+                \Log::warning('Belum 48 Jam!');
                 return response()->json([
                     'followersCount' => $instagramData->follower,
                     'followingCount' => $instagramData->following,
