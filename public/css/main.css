@@ -165,6 +165,7 @@ a.btn-primary,
 
 @media (max-width: 768px) {
     #karakter {
+        top: 5%;
         left: 50%;
         transform: translateX(-50%);
     }
